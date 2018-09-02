@@ -172,9 +172,10 @@ func HTTPGetter(wg *sync.WaitGroup, host Host, debug bool, Jitter int, soft404De
 
 	if host.HostHeader != "" {
 		Good.Printf("%v - %v [%v bytes] (HostHeader: %v)\n", Url, g.Sprintf("%d", host.HTTPResp.StatusCode), len(buf), host.HostHeader)
-
+		Good.Printf("Response size: ", len(buf))
 	} else {
 		Good.Printf("%v - %v [%v bytes]\n", Url, g.Sprintf("%d", host.HTTPResp.StatusCode), len(buf))
+		Good.Printf("Response size: ", len(buf))
 	}
 	currTime := GetTimeString()
 
